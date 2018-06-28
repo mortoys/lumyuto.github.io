@@ -1,14 +1,7 @@
 
-* [文档系统](docsify.md)
 
 * [conda](conda.md)
 
-<!-- * [docker](docker.md) -->
+* [开发环境](env/alfred.md)
 
-* [MAC应用](app.md)
-
-* [命令行](terminal.md)
-
-* [快捷键](shortcut.md)
-
-<!-- * [七牛云](qiniu.md)  -->
+* [廖雪峰python教程总结](liaoxf/)
