@@ -13,3 +13,9 @@ import matplotlib.pyplot as plt
 ```
 
 上面的最后一行指定了输出的格式是 svg，这样浏览器就能为你渲染矢量图了。
+
+http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/index.html
+
+https://zhuanlan.zhihu.com/p/26739300?group_id=843868091631955968
+
+https://github.com/jupyterlab/jupyterlab

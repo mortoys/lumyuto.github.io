@@ -59,3 +59,28 @@ https://www.zhihu.com/question/31360766
 + nohup=no hang up，不挂断，如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程.长命令必须写在shell文件中，否则nohup不起作用
   + nohup command &                 //该命令的一般形式
   + nohup command > myout.file 2>&1 &      //log输出到myout.file，并将标准错误输出重定向到标准输出，再被重定向到myout.file
+
+## jupter theme
+
+https://github.com/dunovank/jupyter-themes
+
+```shell
+# install jupyterthemes
+pip install jupyterthemes
+
+# upgrade to latest version
+pip install --upgrade jupyterthemes
+
+jt -t grade3
+```
+
+## 修改 pip 源
+
+https://mirror.tuna.tsinghua.edu.cn/help/pypi/
+
+修改 `~/.pip/pip.conf`
+
+```
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```

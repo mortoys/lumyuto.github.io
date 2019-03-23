@@ -67,7 +67,3 @@ conda remove -n env_name --all
 
 
 
-
-
-
-

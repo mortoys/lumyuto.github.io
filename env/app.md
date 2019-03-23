@@ -18,6 +18,10 @@
 * [网站仿制 css-peeper](https://chrome.google.com/webstore/detail/css-peeper/mbnbehikldjhnfehhnaidhjhoofhpehk)
 * [自定义网站样式 Stylish](https://sspai.com/post/34508)
 * [惠惠购物助手](https://chrome.google.com/webstore/detail/%E6%83%A0%E6%83%A0%E8%B4%AD%E7%89%A9%E5%8A%A9%E6%89%8B/ohjkicjidmohhfcjjlahfppkdblibkkb?hl=zh-CN)
-* [tab 管理 aerys-tab-manager](https://chrome.google.com/webstore/detail/aerys-tab-manager/kclbicheojedbinfjdjjolmciodoihkl/related?hl=zh-CN)
+<!-- * [tab 管理 aerys-tab-manager](https://chrome.google.com/webstore/detail/aerys-tab-manager/kclbicheojedbinfjdjjolmciodoihkl/related?hl=zh-CN) -->
+* [tab-manager-v2](https://chrome.google.com/webstore/detail/tab-manager-v2/nimllkpgmmbdglnjneeakdgcpkbgbfbp)
+
+
+
 
 ## [Alfred编写教程](env/alfred.md)
