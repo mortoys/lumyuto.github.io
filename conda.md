@@ -19,11 +19,14 @@ export PATH=“/Volumes/Database/Applications/miniconda3/bin:$PATH”
 
 [Anaconda | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
+清华源失效
+
 ```shell
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
 conda config --set show_channel_urls yes
 ```
+
+`.condarc`文件位于(`~/`)
 
 ## conda常用命令
 **查看当前系统下的环境**
@@ -65,5 +68,6 @@ deactivate env_name
 conda remove -n env_name --all
 ```
 
+[其他优化](/#/env/terminal?id=jupter-theme)
 
 

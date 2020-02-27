@@ -17,8 +17,21 @@
       repo: 'https://github.com/lumyuto/lumyuto.github.io',
       loadSidebar: true,
       subMaxLevel: 2,
+      relativePath: false,
+      executeScript: true,
+      mustache: {
+        data: {
+          basePath: 'https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master'
+        }
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-python.js"></script>
+  <!-- <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-mustache"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,18 @@
 {
-    "python.pythonPath": "/Volumes/Database/Applications/miniconda3/envs/py3/bin/python"
+    "python.pythonPath": "/Volumes/Database/Applications/miniconda3/envs/py3/bin/python",
+    "[markdown]": {
+        // 保存自动格式化
+        // "editor.formatOnSave": true,
+        // 显示空白字符
+        "editor.renderWhitespace": "all",
+        // 快速补全
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": true,
+          "strings": true
+        },
+        "editor.snippetSuggestions": "top",
+        "editor.tabCompletion": "on",
+        "editor.acceptSuggestionOnEnter": "on"
+      }
 }

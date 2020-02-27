@@ -16,9 +16,13 @@ omf install eclm
 
 ```shell
 brew install zsh zsh-completions
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 ```
 theme: wezm
+
+.zshrc
+`source ~/.bash_profile`
 
 ## 中文 man
 https://blog.csdn.net/FungLeo/article/details/78522691
@@ -83,4 +87,35 @@ https://mirror.tuna.tsinghua.edu.cn/help/pypi/
 ```
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+## iterm2 Theme Flatland
+
+[Flatland.theme](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/xfce4terminal/colorschemes/Flatland.theme)
+```
+[Scheme]
+Name=Flatland
+ColorForeground=#b8dbef
+ColorBackground=#1d1f21
+ColorCursor=#708284
+ColorPalette=#1d1d19;#f18339;#9fd364;#f4ef6d;#5096be;#695abc;#d63865;#ffffff;#1d1d19;#d22a24;#a7d42c;#ff8949;#61b9d0;#695abc;#d63865;#ffffff
+```
+
+## [VSCode] How to obtain MonokaiPRO for free
+https://www.reddit.com/r/Piracy/comments/a70rvh/vscode_how_to_obtain_monokaipro_for_free/
+
+```shell
+cd ~/.vscode/extensions/monokai.theme-monokai-pro-vscode<version>
+code /js/app.js
+```
+Change return statement
+```js
+return !(!e || !t) && t === (0, n.default)("" + a.default.APP.UUID + e).match(/.{1,5}/g).slice(0, 5).join("-")
+
+return true
+```
+## tldr
+https://github.com/tldr-pages/tldr
+```
+npm install -g tldr
 ```
