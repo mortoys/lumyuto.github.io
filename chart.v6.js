@@ -29,8 +29,8 @@ function drawTimeSeries(config) {
             type: 'line',
             data: {
                 labels: x,
-                datasets: config.labels.map(label => ({
-                    label: label,
+                datasets: config.labels.map((label, i) => ({
+                    label: config.label_text[i],
                     data: data.map(_=>_[label]),
                     pointRadius: 0,
                     fill: false,
@@ -39,6 +39,11 @@ function drawTimeSeries(config) {
                 }))
             },
             options: {
+                plugins: {
+                    colorschemes: {
+                        scheme: 'tableau.ClassicLight10'
+                    }
+                },
                 responsive: true,
                 title: {
                     display: !!config.title,

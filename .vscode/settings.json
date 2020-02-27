@@ -2,7 +2,7 @@
     "python.pythonPath": "/Volumes/Database/Applications/miniconda3/envs/py3/bin/python",
     "[markdown]": {
         // 保存自动格式化
-        // "editor.formatOnSave": true,
+        "editor.formatOnSave": true,
         // 显示空白字符
         "editor.renderWhitespace": "all",
         // 快速补全
