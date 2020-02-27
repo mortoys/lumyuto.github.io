@@ -24,20 +24,19 @@ function loadData(path) {
 function drawTimeSeries(config) {
     return function (data){
         var x = config.x(data)
-        var y = config.y(data)
         var ctx = document.getElementById(config.el).getContext('2d'); 
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: x,
-                datasets: [{
-                    label: config.label,
-                    data: y,
+                datasets: config.labels.map(label => ({
+                    label: label,
+                    data: data[label],
                     pointRadius: 0,
                     fill: false,
                     lineTension: 0,
                     borderWidth: 2
-                }]
+                }))
             },
             options: {
                 responsive: true,

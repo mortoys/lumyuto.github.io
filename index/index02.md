@@ -15,10 +15,9 @@
 // }))
 loadData('/index/PE.csv')(drawTimeSeries({
     el: 'chart02',
-    label: '801003',
+    labels: ['801001', '801002', '801003', '801005', '801300'],
     title: '市盈率',
     x: data => data.map(_ => new Date(_['发布日期'])),
-    y: data => data
 }))
 // data_index_gen(drawTimeSeries({
 //     el: 'chart03',
