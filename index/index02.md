@@ -11,6 +11,7 @@
 <canvas id="chart01"></canvas>
 <canvas id="chart02"></canvas>
 <canvas id="chart03"></canvas>
+<canvas id="chart04"></canvas>
 
 <script>
 loadData('/index/size/Price.csv')(drawTimeSeries({
@@ -45,7 +46,7 @@ loadData('/index/size/PB.csv')(drawTimeSeries({
 
 loadData('/index/size/beta.csv')(drawTimeSeries({
 
-        el: 'chart03',
+        el: 'chart04',
         labels: ['801003', '801001', '801300', '801002', '801005'],
         label_text: ['801003 申万Ａ指', '801001 申万50', '801300 申万300指数', '801002 申万中小板', '801005 申万创业板'],
         title: 'Beta',
