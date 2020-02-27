@@ -1,17 +1,20 @@
 
 function loadData(path) {
     var data = null;
-    Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master"+path, {
-        download: true,
-        header: true,
-        dynamicTyping: true,
-        complete: function(results) {
-            console.log(results.data);
-            data = results.data
-        }
-    });
     return function (handler) {
-        handler(data)
+        if(!!data) handler(data)
+        else {
+            Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master"+path, {
+                download: true,
+                header: true,
+                dynamicTyping: true,
+                complete: function(results) {
+                    console.log(results.data);
+                    data = results.data
+                    handler(data)
+                }
+            });
+        }
     }
 }
 
@@ -26,6 +29,7 @@ function drawTimeSeries(config) {
             data: {
                 labels: x,
                 datasets: [{
+                    label: config.label,
                     data: y,
                     pointRadius: 0,
                     fill: false,
@@ -36,8 +40,8 @@ function drawTimeSeries(config) {
             options: {
                 responsive: true,
                 title: {
-                    display: true,
-                    text: 'Chart.js Line Chart'
+                    display: !!config.title,
+                    text: config.title
                 },
                 tooltips: {
                     mode: 'index',
