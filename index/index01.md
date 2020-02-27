@@ -1,4 +1,4 @@
-## tushare 指数
+## 指数代码
 
 [指数文档](https://tushare.pro/document/2?doc_id=94)
 
@@ -171,6 +171,11 @@ print(beta)
 
 <!-- ![](/img/aa.png) -->
 
-<canvas id="myChart" width="400" height="400"></canvas>
-<script src="{{cdnPath}}/snippet/chart.js">
-
+<canvas id="myChart"></canvas>
+<script>
+loadData('/snippet/data.csv')(drawTimeSeries({
+    el: '#myChart',
+    x: data => data.map(_ => new Date(_['发布日期'])),
+    y: data => data.map(_ => _['收盘指数'])
+}))
+</script>
