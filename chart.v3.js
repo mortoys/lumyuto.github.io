@@ -1,20 +1,22 @@
 
 function loadData(path) {
     var data = null;
-    return function (handler) {
-        if(!!data) handler(data)
-        else {
-            Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master"+path, {
-                download: true,
-                header: true,
-                dynamicTyping: true,
-                complete: function(results) {
-                    console.log(results.data);
-                    data = results.data
-                    handler(data)
-                }
-            });
+    var task = [];
+    Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master"+path, {
+        download: true,
+        header: true,
+        dynamicTyping: true,
+        complete: function(results) {
+            console.log(results.data);
+            data = results.data
+            task.map(f => f(data))
         }
+    });
+
+    return function (handler) {
+        !data
+        ? task.push(handler)
+        : handler(data)
     }
 }
 
