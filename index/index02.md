@@ -13,42 +13,44 @@
 <canvas id="chart03"></canvas>
 
 <script>
-// data_index_gen = loadData('/index/801003.csv')
-// data_index_gen(drawTimeSeries({
-//     el: 'chart01', 
-//     label: '801003', 
-//     title: '收盘指数', 
-//     x: data => data.map(_ => new Date(_['发布日期'])), 
-//     y: data => data.map(_ => _['收盘指数'])
-// }))
+loadData('/index/size/Price.csv')(drawTimeSeries({
 
-loadData('/index/PE.csv')(drawTimeSeries({
-
-    el: 'chart02',
-    labels: ['801001', '801002', '801003', '801005', '801300'],
-    label_text: ['801001 申万50', '801002 申万中小板', '801003 申万Ａ指', '801005 申万创业板', '801300 申万300指数'],
-    title: '市盈率',
-    x: data => data.map(_ => new Date(_['发布日期'])),
+        el: 'chart01',
+        labels: ['801003', '801001', '801300', '801002', '801005'],
+        label_text: ['801003 申万Ａ指', '801001 申万50', '801300 申万300指数', '801002 申万中小板', '801005 申万创业板'],
+        title: '价格',
+        x: data => data.map(_ => new Date(_['发布日期'])),
 
 }))
 
-loadData('/index/PB.csv')(drawTimeSeries({
+loadData('/index/size/PE.csv')(drawTimeSeries({
 
-    el: 'chart02',
-    labels: ['801001', '801002', '801003', '801005', '801300'],
-    label_text: ['801001 申万50', '801002 申万中小板', '801003 申万Ａ指', '801005 申万创业板', '801300 申万300指数'],
-    title: '市盈率',
-    x: data => data.map(_ => new Date(_['发布日期'])),
+        el: 'chart02',
+        labels: ['801003', '801001', '801300', '801002', '801005'],
+        label_text: ['801003 申万Ａ指', '801001 申万50', '801300 申万300指数', '801002 申万中小板', '801005 申万创业板'],
+        title: '市盈率',
+        x: data => data.map(_ => new Date(_['发布日期'])),
+
+}))
+
+loadData('/index/size/PB.csv')(drawTimeSeries({
+
+        el: 'chart03',
+        labels: ['801003', '801001', '801300', '801002', '801005'],
+        label_text: ['801003 申万Ａ指', '801001 申万50', '801300 申万300指数', '801002 申万中小板', '801005 申万创业板'],
+        title: '市净率',
+        x: data => data.map(_ => new Date(_['发布日期'])),
 
 }))
 </script>
 
 ``` python
 ret = {}
+tt = pd.read_csv(root+str(801003)+'.csv')
 for code in [801001, 801002, 801003, 801005, 801300]:
     data = pd.read_csv(root+str(code)+'.csv')
     rr = tt.merge(data, on='发布日期')
-    ret[str(code)] = rr['市净率(倍)_y']
+    ret[str(code)] = rr['收盘指数_y']
 ret['发布日期'] = tt['发布日期']
 ```
 
