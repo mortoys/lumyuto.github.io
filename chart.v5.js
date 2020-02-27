@@ -31,7 +31,7 @@ function drawTimeSeries(config) {
                 labels: x,
                 datasets: config.labels.map(label => ({
                     label: label,
-                    data: data[label],
+                    data: data.map(_=>_[label]),
                     pointRadius: 0,
                     fill: false,
                     lineTension: 0,
