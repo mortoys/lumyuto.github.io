@@ -1,15 +1,17 @@
 
 function loadData(path) {
+    var data = null;
+    Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master"+path, {
+        download: true,
+        header: true,
+        dynamicTyping: true,
+        complete: function(results) {
+            console.log(results.data);
+            data = results.data
+        }
+    });
     return function (handler) {
-        Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master"+path, {
-            download: true,
-            header: true,
-            dynamicTyping: true,
-            complete: function(results) {
-                console.log(results.data);
-                handler(results.data)
-            }
-        });
+        handler(data)
     }
 }
 

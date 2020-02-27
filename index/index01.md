@@ -168,14 +168,3 @@ print(beta)
 (data_r).cumsum().plot()
 (index_r * beta).cumsum().plot()
 ```
-
-<!-- ![](/img/aa.png) -->
-
-<canvas id="myChart"></canvas>
-<script>
-loadData('/snippet/data.csv')(drawTimeSeries({
-    el: '#myChart',
-    x: data => data.map(_ => new Date(_['发布日期'])),
-    y: data => data.map(_ => _['收盘指数'])
-}))
-</script>
