@@ -172,5 +172,5 @@ print(beta)
 <!-- ![](/img/aa.png) -->
 
 <canvas id="myChart" width="400" height="400"></canvas>
-<script src="{{basePath}}/snippet/chart.js">
+<script src="{{cdnPath}}/snippet/chart.js">
 

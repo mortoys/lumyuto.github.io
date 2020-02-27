@@ -1,3 +1,10 @@
+Papa.parse("https://raw.githubusercontent.com/lumyuto/lumyuto.github.io/master/snippet/data.csv", {
+	download: true,
+	complete: function(results) {
+		console.log(results);
+	}
+});
+
 var ctx = document.getElementById('myChart').getContext('2d'); 
 var myChart = new Chart(ctx, {
     type: 'bar',
