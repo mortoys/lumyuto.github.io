@@ -42,6 +42,16 @@ loadData('/index/size/PB.csv')(drawTimeSeries({
         x: data => data.map(_ => new Date(_['发布日期'])),
 
 }))
+
+loadData('/index/size/beta.csv')(drawTimeSeries({
+
+        el: 'chart03',
+        labels: ['801003', '801001', '801300', '801002', '801005'],
+        label_text: ['801003 申万Ａ指', '801001 申万50', '801300 申万300指数', '801002 申万中小板', '801005 申万创业板'],
+        title: 'Beta',
+        x: data => data.map(_ => new Date(_['发布日期'])),
+
+}))
 </script>
 
 ``` python
@@ -50,7 +60,15 @@ tt = pd.read_csv(root+str(801003)+'.csv')
 for code in [801001, 801002, 801003, 801005, 801300]:
     data = pd.read_csv(root+str(code)+'.csv')
     rr = tt.merge(data, on='发布日期')
-    ret[str(code)] = rr['收盘指数_y']
-ret['发布日期'] = tt['发布日期']
+    ret[str(code)] = rr['涨跌幅(%)_y']
+# ret['发布日期'] = tt['发布日期']
+data = pd.DataFrame(ret)
+data = np.log(data/100+1)
+data.index = tt['发布日期']
+```
+
+``` python
+m = data.loc[:,['801003','801300']][::-1].rolling(120).cov().unstack()
+beta = (m.iloc[:,0] / m.iloc[:,1])
 ```
 
